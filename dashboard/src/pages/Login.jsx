@@ -51,8 +51,8 @@ export default function Login() {
             Z
           </span>
         </div>
-        <h2 className="brand-text-glow" style={{ margin: 0, paddingBottom: '5px' }}>ZENITH</h2>
-        <p>Quản lý Guild & Tự động hóa cao cấp</p>
+        <h2 className="brand-text-glow" style={{ margin: 0, paddingBottom: '5px' }}>AECRBOTX</h2>
+        <p>Quản lý cộng đồng discord cao cấp</p>
         
         {!status ? (
           <a href="/api/auth/login" className="btn-discord" style={{ textDecoration: 'none' }}>
