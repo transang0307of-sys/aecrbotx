@@ -12,20 +12,31 @@ export default function Login() {
     const error = params.get('error');
 
     if (token) {
+      // Lưu token
       localStorage.setItem('zenith_token', token);
       localStorage.removeItem('zenith_guild_id');
-      setStatus({ type: 'success', text: 'Xác thực thành công! Đang chuyển hướng...' });
+
+      setStatus({
+        type: 'success',
+        text: 'Đăng nhập thành công! Đang chuyển hướng...'
+      });
+
       setTimeout(() => {
         navigate('/');
       }, 1000);
     } else if (error) {
-      setStatus({ type: 'error', text: `Xác thực thất bại: ${error}` });
+      setStatus({
+        type: 'error',
+        text: `Xác thực thất bại: ${error}`
+      });
     }
   }, [location, navigate]);
 
   return (
     <div className="login-body">
       <div className="login-card glass-panel">
+
+        {/* Logo */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
@@ -40,32 +51,35 @@ export default function Login() {
         }}>
           <span style={{ 
             fontSize: '3.5rem', 
-            fontWeight: '900', 
-            fontFamily: "'Outfit', sans-serif",
-            lineHeight: 1,
+            fontWeight: '900',
             background: 'linear-gradient(135deg, #00A8FC, #5865F2)',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            filter: 'drop-shadow(0 0 10px rgba(88, 101, 242, 0.5))'
+            WebkitTextFillColor: 'transparent'
           }}>
             Z
           </span>
         </div>
-        <h2 className="brand-text-glow" style={{ margin: 0, paddingBottom: '5px' }}>ANHEMCROWNBOT</h2>
-        <p>Quản lý Guild & Tự động hóa cao cấp</p>
-        
+
+        <h2 style={{ margin: 0 }}>ANHEMCROWNBOT</h2>
+        <p>Quản lý Discord nâng cao</p>
+
         {!status ? (
-          <a href="/api/auth/login" className="btn-discord" style={{ textDecoration: 'none' }}>
+          // 🔥 FIX QUAN TRỌNG: gọi thẳng backend
+          <a
+            href="http://de3.bot-hosting.net:21288/api/auth/login"
+            className="btn-discord"
+            style={{ textDecoration: 'none' }}
+          >
             <i className="fa-brands fa-discord"></i> Đăng nhập bằng Discord
           </a>
         ) : (
-          <div id="login-status">
+          <div>
             <span style={{ color: status.type === 'success' ? '#4ADE80' : 'red' }}>
-              {status.type === 'error' && <i className="fa-solid fa-circle-exclamation" style={{ marginRight: '8px' }}></i>}
               {status.text}
             </span>
           </div>
         )}
+
       </div>
     </div>
   );
