@@ -55,7 +55,7 @@ export default function Login() {
         <p>Quản lý Guild & Tự động hóa cao cấp</p>
         
         {!status ? (
-          <a href="/api/auth/login" className="btn-discord" style={{ textDecoration: 'none' }}>
+          <a href="http://de3.bot-hosting.net:21288/api/auth/login"> className="btn-discord" style={{ textDecoration: 'none' }}>
             <i className="fa-brands fa-discord"></i> Đăng nhập bằng Discord
           </a>
         ) : (
