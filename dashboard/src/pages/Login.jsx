@@ -52,7 +52,7 @@ export default function Login() {
           </span>
         </div>
         <h2 className="brand-text-glow" style={{ margin: 0, paddingBottom: '5px' }}>AECRBOTX</h2>
-        <p>Quản lý cộng đồng discord cao cấp</p>
+        <p>Quản lý cộng đồng Discord cao cấp</p>
         
         {!status ? (
           <a href="/api/auth/login" className="btn-discord" style={{ textDecoration: 'none' }}>
