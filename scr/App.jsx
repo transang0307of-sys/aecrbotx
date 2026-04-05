@@ -9,11 +9,12 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Dashboard />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        
+        {/* 👇 redirect về /login thay vì / */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
