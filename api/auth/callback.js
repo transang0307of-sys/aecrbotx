@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   const code = req.query.code;
   const clientId = process.env.DISCORD_CLIENT_ID;
   const clientSecret = process.env.DISCORD_CLIENT_SECRET;
-  const redirectUri = 'https://your-vercel-domain.vercel.app/api/auth/callback';
+  const redirectUri = 'https://aecrbotxnet.netlify.app/api/auth/callback';
 
   if (!code) return res.status(400).send('No code provided');
 
